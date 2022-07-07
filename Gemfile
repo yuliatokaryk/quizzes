@@ -57,7 +57,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'capistrano'
-gem 'capistrano-rails'
 gem 'capistrano-passenger'
+gem 'capistrano-rails'
 gem 'capistrano-rbenv'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
 gem 'pg'
