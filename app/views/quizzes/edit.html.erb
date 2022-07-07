@@ -1,0 +1,10 @@
+<h1>This is edit page</h1>
+
+<%= render 'form' %>
+
+<p>
+  <%= link_to 'Return to quiz', quizzes_path %>
+</p>
+<p>
+  <%= link_to 'Delete', quiz_path(@quiz),  method: :delete, data: { confirm: "Are you sure?" } %>
+</p>
