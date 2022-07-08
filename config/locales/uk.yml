@@ -1,0 +1,15 @@
+uk:
+  are_you_sure: Ви впевнені?
+  problem: Не вдалось зберегти зміни через помилки
+  updated: Квіз оновлено
+  created: Квіз додано
+  title: Назва
+  description: Опис
+  action: Дії
+  actions:
+    quizzes:
+      all: Перейти на сторінку з квізами
+      show: Переглянути
+      edit: Редагувати
+      new: Створити новий квіз
+      destroy: Видалити

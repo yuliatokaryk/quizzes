@@ -1,11 +1,9 @@
-<h1>This is index page</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3">Action</th>
+      <th><%= t "title" %></th>
+      <th><%= t "description" %></th>
+      <th colspan="3"><%= t "action" %></th>
     </tr>
   </thead>
   <tbody>
@@ -14,9 +12,9 @@
         <td><%= quiz.title %></td>
         <td><%= quiz.description %></td>
         <td>
-          <%= link_to 'Show', quiz_path(quiz) %>
-          <%= link_to 'Edit', edit_quiz_path(quiz) %>
-          <%= link_to 'Delete', quiz_path(quiz),  method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to t('actions.quizzes.show'), quiz_path(quiz) %>
+          <%= link_to t('actions.quizzes.edit'), edit_quiz_path(quiz) %>
+          <%= link_to t('actions.quizzes.destroy'), quiz_path(quiz),  method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       <tr>
     <% end %>
@@ -24,5 +22,5 @@
 </table>
 
 <p>
-  <%= link_to 'Create new quiz', new_quiz_path %>
+  <%= link_to t('actions.quizzes.new'), new_quiz_path %>
 </p>
