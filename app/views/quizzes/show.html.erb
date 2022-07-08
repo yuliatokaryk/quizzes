@@ -1,14 +1,12 @@
-<h1>This is show page</h1>
-
-<p><strong>Title: </strong><%= @quiz.title %></p>
-<p><strong>Description: </strong><%= @quiz.description %></p>
+<p><strong><%= Quiz.human_attribute_name(:title) %>: </strong><%= @quiz.title %></p>
+<p><strong><%= Quiz.human_attribute_name(:description) %>: </strong><%= @quiz.description %></p>
 
 <p>
-  <%= link_to 'Return to all quizzes', quizzes_path %>
+  <%= link_to t('quizzes.all_quizzes'), quizzes_path %>
 </p>
 <p>
-  <%= link_to 'Edit', edit_quiz_path(@quiz) %>
+  <%= link_to t('actions.edit'), edit_quiz_path(@quiz) %>
 </p>
 <p>
-  <%= link_to 'Delete', quiz_path(@quiz),  method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to t('actions.destroy'), quiz_path(@quiz),  method: :delete, data: { confirm: t('are_you_sure') } %>
 </p>
