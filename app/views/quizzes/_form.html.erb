@@ -1,5 +1,5 @@
 <% if @quiz.errors.any? %>
-  <h2><%= t 'problem' %></h2>
+  <h2><%= t('problem') %></h2>
   <ul>
     <% @quiz.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -9,11 +9,11 @@
 
 <%= form_with(model: @quiz, local: true) do |f| %>
   <p>
-    <%= f.label t('title') %><br>
+    <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label t('description') %><br>
+    <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
 

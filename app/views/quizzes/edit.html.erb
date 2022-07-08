@@ -1,8 +1,8 @@
 <%= render 'form' %>
 
 <p>
-  <%= link_to t('actions.quizzes.all'), quizzes_path %>
+  <%= link_to t('quizzes.all_quizzes'), quizzes_path %>
 </p>
 <p>
-  <%= link_to t('actions.quizzes.destroy'), quiz_path(@quiz),  method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to t('actions.destroy'), quiz_path(@quiz),  method: :delete, data: { confirm: t('are_you_sure') } %>
 </p>

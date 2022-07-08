@@ -1,15 +1,20 @@
 en:
-  are_you_sure: Ви впевнені?
+  are_you_sure: Are you sure?
   problem: There are some errors
-  updated: Quiz updated
-  created: Quiz added
-  title: Title
-  description: Description
-  action: Action
   actions:
-    quizzes:
-      all: Open page with all quizzes
-      show: Show
-      edit: Edit
-      new: Add new quiz
-      destroy: Delete
+    title: Action
+    edit: Edit
+    destroy: Delete
+    show: Show
+  quizzes:
+    create:
+      success: Quiz added successfully
+    update:
+      success: Quiz updated successfully
+    all_quizzes: Open page with all quizzes
+    new_quiz: Add new quiz
+  activerecord:
+    attributes:
+      quiz:
+        title: Title
+        description: Description

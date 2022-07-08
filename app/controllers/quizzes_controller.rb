@@ -18,7 +18,7 @@ class QuizzesController < ApplicationController
   def create
     @quiz = Quiz.new(quiz_params)
     if @quiz.save
-      flash[:notice] = t('created')
+      flash[:notice] = t('.success')
       redirect_to quizzes_path
     else
       render 'new'
@@ -27,7 +27,7 @@ class QuizzesController < ApplicationController
 
   def update
     if @quiz.update(quiz_params)
-      flash[:notice] = t('updated')
+      flash[:notice] = t('.success')
       redirect_to @quiz
     else
       render 'edit'

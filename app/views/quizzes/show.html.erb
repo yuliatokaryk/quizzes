@@ -1,12 +1,12 @@
-<p><strong><%= t 'title' %>: </strong><%= @quiz.title %></p>
-<p><strong><%= t 'description' %>: </strong><%= @quiz.description %></p>
+<p><strong><%= Quiz.human_attribute_name(:title) %>: </strong><%= @quiz.title %></p>
+<p><strong><%= Quiz.human_attribute_name(:description) %>: </strong><%= @quiz.description %></p>
 
 <p>
-  <%= link_to t('actions.quizzes.all'), quizzes_path %>
+  <%= link_to t('quizzes.all_quizzes'), quizzes_path %>
 </p>
 <p>
-  <%= link_to t('actions.quizzes.edit'), edit_quiz_path(@quiz) %>
+  <%= link_to t('actions.edit'), edit_quiz_path(@quiz) %>
 </p>
 <p>
-  <%= link_to t('actions.quizzes.destroy'), quiz_path(@quiz),  method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to t('actions.destroy'), quiz_path(@quiz),  method: :delete, data: { confirm: t('are_you_sure') } %>
 </p>

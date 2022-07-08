@@ -1,15 +1,20 @@
 uk:
   are_you_sure: Ви впевнені?
   problem: Не вдалось зберегти зміни через помилки
-  updated: Квіз оновлено
-  created: Квіз додано
-  title: Назва
-  description: Опис
-  action: Дії
   actions:
-    quizzes:
-      all: Перейти на сторінку з квізами
-      show: Переглянути
-      edit: Редагувати
-      new: Створити новий квіз
-      destroy: Видалити
+    title: Дії
+    edit: Редагувати
+    destroy: Видалити
+    show: Переглянути
+  quizzes:
+    create:
+      success: Тест успішно додано
+    update:
+      success: Тест успішно оновлено
+    all_quizzes: Перейти на сторінку з тестами
+    new_quiz: Створити новий тест
+  activerecord:
+    attributes:
+      quiz:
+        title: Назва
+        description: Опис
