@@ -10,8 +10,10 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen justify-between">
+    <%= render "./layouts/partials/header" %>
     <%= render 'layouts/flashes' %>
     <%= yield %>
+    <%= render "./layouts/partials/footer" %>
   </body>
 </html>

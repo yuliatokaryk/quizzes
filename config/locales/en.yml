@@ -1,20 +1,9 @@
 en:
-  home: Home
-  welcome: Welcome
-  to_quizland: to Quizland
-  first_quiz: Add first quiz
-  about: About us
   are_you_sure: Are you sure?
   problem: There are some errors
   submit: Submit
   cancel: Cancel
-  profitably: Profitably
-  profitably_text: Our tests are absolutely free! Create your first test now!
-  comfortably: Comfortably
-  comfortably_text: You can create your own test, choosing the topic and difficulty of the questions yourself!
-  fast: Fast
-  fast_text: With the help of our tests, you can quickly test your knowledge or the knowledge of your students in various disciplines!
-  why_quizland: Why Quizland?
+  about: About us
   actions:
     title: Action
     edit: Edit
@@ -27,6 +16,18 @@ en:
       success: Quiz updated successfully
     all_quizzes: Open quizzes
     new_quiz: Add new quiz
+  home:
+    index: Home
+    welcome: Welcome
+    to_quizland: to Quizland
+    first_quiz: Add first quiz
+    profitably: Profitably
+    profitably_text: Our tests are absolutely free! Create your first test now!
+    comfortably: Comfortably
+    comfortably_text: You can create your own test, choosing the topic and difficulty of the questions yourself!
+    fast: Fast
+    fast_text: With the help of our tests, you can quickly test your knowledge or the knowledge of your students in various disciplines!
+    why_quizland: Why Quizland?
   activerecord:
     attributes:
       quiz:
