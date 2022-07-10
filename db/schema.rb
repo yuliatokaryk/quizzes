@@ -16,8 +16,12 @@ ActiveRecord::Schema.define(version: 2022_07_10_143820) do
   enable_extension "plpgsql"
 
   create_table "questions", force: :cascade do |t|
+    t.bigint "quiz_id", null: false
+    t.string "content"
+    t.jsonb "answers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -27,4 +31,5 @@ ActiveRecord::Schema.define(version: 2022_07_10_143820) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "questions", "quizzes"
 end
