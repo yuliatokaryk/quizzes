@@ -6,6 +6,7 @@ class QuizzesController < ApplicationController
   end
   
   def show
+    @questions = Question.where(:quiz_id => @quiz[:id])
   end
 
   def new

@@ -1,40 +1,29 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
-
-  # GET /questions or /questions.json
   def index
     @questions = Question.all
   end
 
-  # GET /questions/1 or /questions/1.json
   def show
   end
 
-  # GET /questions/new
   def new
     @question = Question.new
   end
 
-  # GET /questions/1/edit
   def edit
   end
 
-  # POST /questions or /questions.json
   def create
-    @question = Question.new(question_params)
+    @question = Question.new(question_params.merge(quiz_id: params[:quiz_id]))
 
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to question_url(@question), notice: "Question was successfully created." }
-        format.json { render :show, status: :created, location: @question }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.save
+      redirect_to quiz_question_path(@question.quiz, @question), notice: 'Review was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /questions/1 or /questions/1.json
   def update
     respond_to do |format|
       if @question.update(question_params)
@@ -47,7 +36,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # DELETE /questions/1 or /questions/1.json
   def destroy
     @question.destroy
 
@@ -58,13 +46,11 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_question
       @question = Question.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def question_params
-      params.fetch(:question, {})
+      params.require(:question).permit(:quiz_id, :content, :answers)
     end
 end
