@@ -15,14 +15,17 @@
         <% end %>
 
         <div class="field">
-          <%= form.text_area :content, class: 'form-control' %>
+          <%= form.text_area :content, class: 'form-control border' %>
         </div>
-        <div class="field">
-          <%= form.text_area :answers, class: 'form-control' %>
-          <%= form.text_area :answers, class: 'form-control' %>
-          <%= form.text_area :answers, class: 'form-control' %>
-          <%= form.text_area :answers, class: 'form-control' %>
-        </div>
+
+        <button type="button" id="add_new_answer_button" class="">New answer</button>
+
+        <ul id="quiz_answers_list">
+          <li>
+            <%= form.text_field :answers, placeholder: "answer", name: "question[answers][]", class: "border" %>
+            <%= form.check_box :correct_answers, name: "question[correct_answers][]", class: "border" %>
+          </li>
+        </ul>
 
         <div class="actions">
           <%= form.submit class: 'btn btn-primary' %>

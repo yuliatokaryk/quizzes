@@ -1,15 +1,18 @@
-<p><strong><%= Quiz.human_attribute_name(:title) %>: </strong><%= @quiz.title %></p>
-<p><strong><%= Quiz.human_attribute_name(:description) %>: </strong><%= @quiz.description %></p>
-<% @questions.each do |question| %>
-  <p><%= question.content %></p>
-  <p><%= question.answers %></p>
-<% end %>
-<p>
-  <%= link_to t("quizzes.all_quizzes"), quizzes_path %>
-</p>
-<p>
-  <%= link_to t("actions.edit"), edit_quiz_path(@quiz) %>
-</p>
-<p>
-  <%= link_to t("actions.destroy"), quiz_path(@quiz),  method: :delete, data: { confirm: t("are_you_sure") } %>
-</p>
+
+<div class="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
+  <h2 class="font-semibold text-3xl mb-5"><%= @quiz.title %></h2>
+  <p>
+    <%= @quiz.description %>
+  </p>
+  <hr class="my-6 border-gray-300" />
+  <% @questions.each_with_index do |question, index| %>
+    <p><strong><%= index + 1 %>. <%= question.content %></strong></p>
+    <p><%= question.answers %></p>
+    <% if question.answers.instance_of? Array %>
+      <% question.answers.each do |answer| %>
+        <p><%= answer %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
