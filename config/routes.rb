@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :questions
   root 'pages#home'
-  resources :quizzes
+
+  resources :quizzes do
+    resources :questions
+  end
 end
