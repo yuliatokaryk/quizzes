@@ -18,12 +18,12 @@
         <%= f.label :description, class:"form-label inline-block mb-2 text-gray-700"%>
         <%= f.text_area :description, class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
       </div>
-      <div class="flex items-center justify-center">
-        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-          <%= link_to 'Add questions', new_quiz_question_path(@quiz), class:"rounded-l inline-block px-6 py-2.5 bg-gray-200 text-black font-medium text-xs leading-tight uppercase hover:bg-gray-300 focus:bg-gray-300 focus:outline-none focus:ring-0 active:bg-gray-400 transition duration-150 ease-in-out" %>
-          <%= f.submit t("submit"), class:" inline-block px-6 py-2.5 bg-gray-200 text-black font-medium text-xs leading-tight uppercase hover:bg-gray-300 focus:bg-grat-300 focus:outline-none focus:ring-0 active:bg-gray-400 transition duration-150 ease-in-out"%>
-          <%= link_to t("cancel"), quizzes_path, class:" rounded-r inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out" %>
-        </div>
+      <div class="flex space-x-2">
+        <%= f.submit t("submit"), class:"px-2 py-2 border-2 border-black text-black text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" %>
+        <% if @quiz[:id] != nil %>
+          <%= link_to t("question.add_questions"), new_quiz_question_path(@quiz), class:"px-2 py-2 border-2 border-black text-black text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" %>
+        <% end %>
+          <%= link_to t("cancel"), quizzes_path, class:"px-2 py-2 border-2 border-black text-black text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" %>
       </div>
     <% end %>
   </div>
