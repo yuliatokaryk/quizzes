@@ -1,0 +1,31 @@
+<% if @question.errors.any? %>
+  <h2><%= t("problem") %></h2>
+  <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="flex justify-center m-8">
+  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+    <%= form_with(model: [:quiz, question], local: true) do |f| %>
+      <div class="form-group mb-6">
+        <%= f.label t('question.content'), class:"form-label inline-block mb-2 text-gray-700"%>
+        <%= f.text_area :content, class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+      </div>
+      <button type="button" id="add_new_answer_button" class="px-2 py-2 border-2 border-black text-black text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"><%= t("question.add_answer") %></button>
+
+        <ul id="quiz_answers_list">
+          <li>
+            <%= f.text_field :answers, placeholder: t("question.answer"), name: "question[answers][]", class: "form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out my-2 mx-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+            <%= f.check_box :correct_answers, name: "question[correct_answers][]", class: "w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+            <label class="text-xs text-gray-400"><%= t("question.correct_answer") %></label>
+          </li>
+        </ul>
+      <div class="flex items-center justify-center">
+        <%= f.submit t("submit"), class:"px-2 py-2 border-2 border-black text-black text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" %>
+      </div>
+    <% end %>
+  </div>
+</div>

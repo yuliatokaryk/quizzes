@@ -28,6 +28,12 @@ en:
     fast: Fast
     fast_text: With the help of our tests, you can quickly test your knowledge or the knowledge of your students in various disciplines!
     why_quizland: Why Quizland?
+  question:
+    content: Question
+    answer: Answer
+    add_answer: Add answer
+    correct_answer: Correct answer
+    add_questions: Add questions
   activerecord:
     attributes:
       quiz:
