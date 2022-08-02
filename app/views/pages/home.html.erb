@@ -47,3 +47,13 @@
 <div class="flex justify-center items-center h-full">
   <%= link_to t("quizzes.all_quizzes"), quizzes_path, class:"inline-block px-6 py-2.5 border-2 border-black text-black font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out m-5" %>
 </div>
+
+    <ul>
+  <% if user_signed_in? %>
+<li><%= link_to "Hi, #{current_user.email}", edit_user_registration_path %></li>
+<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+<li><%= link_to 'Sign In', new_user_session_path %></li>
+<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+  <% end %>
+</ul>
